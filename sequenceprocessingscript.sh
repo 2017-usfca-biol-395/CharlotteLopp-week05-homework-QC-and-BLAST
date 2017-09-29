@@ -54,4 +54,5 @@ for file in data/trimmed/*.fasta
 do
     blastn -db /blast-db/nt -num_threads 2 -outfmt '10 sscinames std' -out output/BLAST/$(basename -s .trim.fasta $file).blast_results.csv -max_target_seqs 1 -negative_gilist /blast-db/2017-09-21_GenBank_Environmental_Uncultured_to_Exclude.txt -query $file
 done
+echo "Made directory for BLAST results in the output subfolder"
 echo "Code has been written to search for top match of each sequence against the nt database"
